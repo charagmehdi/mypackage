@@ -3,7 +3,8 @@
     <div style="padding: 5px; margin-left: 130px">
       <textarea
         [(ngModel)]="data"
-        [mentionConfig]="{ items: items, labelKey: 'username' }"
+        [mention]="items"
+        [mentionConfig]="mentionConfig"
         (itemSelected)="getItem($event)"
         [style.color]="isShowColor ? 'coral' : ''"
       ></textarea>

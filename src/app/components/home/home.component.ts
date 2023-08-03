@@ -6,22 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  items: string[] = ['Noah', 'Liam', 'Mason', 'Jacob'];
+  items: string[] = ['tom', 'dick', 'mehdi', 'mohd'];
   isShowColor = false;
   mentionConfig = {
-    items: [
-      {
-        userid: 'abc@media.com',
-        password: 'abc123',
-        username: 'tom',
-      },
-      {
-        userid: 'def@media.com',
-        password: 'def123',
-        username: 'dick',
-      },
-    ],
     triggerChar: '@',
+    maxItems: 10,
+    labelKey: 'username',
   };
   data = '';
 
