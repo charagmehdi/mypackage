@@ -1,0 +1,20 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns in the grid */
+    grid-gap: 10px;
+    margin-top: 5em;
+     /* Space between grid items */
+  }
+  
+  .grid-item {
+    padding: 0.3em;
+    /* Additional styling for the grid items, such as setting a fixed height, width, or border */
+  }
+  
+  /* Adjust the size of the images if needed */
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+  

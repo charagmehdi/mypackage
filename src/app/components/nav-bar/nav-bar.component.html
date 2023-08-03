@@ -1,0 +1,72 @@
+<mat-toolbar class="nav-bar mat-elevation-z2">
+  <button mat-button [routerLink]="['']">Home</button>
+  <button
+    *ngIf="this.coreService.isShowSuccessMsg"
+    mat-button
+    [routerLinkActive]="['link-active']"
+    [routerLink]="['/gallery']"
+  >
+    Gallery
+  </button>
+  <button
+    mat-button
+    [routerLinkActive]="['link-active']"
+    [routerLink]="['/about']"
+  >
+    About
+  </button>
+  <span class="spacer"></span>
+  <span class="spacer"></span>
+  <div fxLayout="row" fxLayoutAlign="start end" [style.margin-left]="'50em'">
+    <button
+      *ngIf="!coreService.isShowSuccessMsg"
+      mat-button
+      [routerLinkActive]="['link-active']"
+      [routerLink]="['/login']"
+    >
+      Login
+    </button>
+    <button
+      *ngIf="coreService.isShowSuccessMsg"
+      mat-icon-button
+      [matMenuTriggerFor]="userMenu"
+    >
+      <span
+        style="
+          color: #4a4848;
+          background-color: antiquewhite;
+          border-radius: 50%;
+          padding: 1em;
+        "
+      >
+        {{ coreService.loginUserName }}
+      </span>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button
+        [routerLinkActive]="['link-active']"
+        [routerLink]="['']"
+        mat-menu-item
+        (click)="logout()"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  <div fxFlex fxLayout="column">
+    <div style="padding: 0.5em">
+      Copyright © 2023 web-eau.net. All Rights Reserved.
+    </div>
+    <div>
+      Open Source Matters in the United States and other countries. Web-eau.net
+      is not affiliated with or endorsed by the Joomla project or by Open Source
+      Matters.
+    </div>
+  </div>
+</div>

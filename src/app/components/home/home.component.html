@@ -1,0 +1,20 @@
+<div class="left-panel">
+  <div class="fixed-height" [ngClass]="'bg-image'">
+    <div style="padding: 5px; margin-left: 130px">
+      <textarea
+        [(ngModel)]="data"
+        [mentionConfig]="{ items: items, labelKey: 'username' }"
+        (itemSelected)="getItem($event)"
+        [style.color]="isShowColor ? 'coral' : ''"
+      ></textarea>
+    </div>
+    <p class="story-title">
+      {{ "Show appreciation for hard work and achievements" }}
+    </p>
+    <p class="story-des">
+      {{
+        "Let your employees feel needed, let them feel you appreciate their effort and cannot wait to see what other things they can achieve. Feed their need for good self esteem with your words and watch them became more optimistic and energetic."
+      }}
+    </p>
+  </div>
+</div>
