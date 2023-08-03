@@ -53,7 +53,7 @@ export class NavBarComponent implements OnInit {
     // this.authService.login();
   }
   logout() {
-    this.coreService.isShowSuccessMsg = false;
+    this.coreService.isValidUser = false;
   }
   getCard() {
     // this.blogService.setTitle(this.titleValue);

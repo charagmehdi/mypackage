@@ -54,13 +54,13 @@ export class LoginComponent implements OnInit {
     for (let item of this.coreService.loginJson) {
       if (item.password === data.password && item.username === data.username) {
         this.coreService.loginUserName = data.username;
-        this.coreService.isShowSuccessMsg = true;
+        this.coreService.isValidUser = true;
         break;
       } else {
-        this.coreService.isShowSuccessMsg = false;
+        this.coreService.isValidUser = false;
       }
     }
-    if (this.coreService.isShowSuccessMsg) {
+    if (this.coreService.isValidUser) {
       alert('Login Successfully');
       this.route.navigate(['']);
     } else {

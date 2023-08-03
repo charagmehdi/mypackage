@@ -8,7 +8,7 @@ import { CoreService } from './core.service';
 export class AuthService implements CanActivate {
   constructor(public coreService: CoreService, private route: Router) {}
   canActivate() {
-    if (this.coreService.isShowSuccessMsg) {
+    if (this.coreService.isValidUser) {
       return true;
     } else {
       window.alert("You don't have permission to view this page,Please Login");

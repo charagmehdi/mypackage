@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CoreService {
   loginUserName = '';
-  isShowSuccessMsg: boolean = false;
+  isValidUser: boolean = false;
   loginJson = [
     {
       userid: 'abc@media.com',

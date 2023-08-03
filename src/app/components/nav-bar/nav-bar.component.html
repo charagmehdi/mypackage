@@ -1,7 +1,7 @@
 <mat-toolbar class="nav-bar mat-elevation-z2">
   <button mat-button [routerLink]="['']">Home</button>
   <button
-    *ngIf="this.coreService.isShowSuccessMsg"
+    *ngIf="this.coreService.isValidUser"
     mat-button
     [routerLinkActive]="['link-active']"
     [routerLink]="['/gallery']"
@@ -19,7 +19,7 @@
   <span class="spacer"></span>
   <div fxLayout="row" fxLayoutAlign="start end" [style.margin-left]="'50em'">
     <button
-      *ngIf="!coreService.isShowSuccessMsg"
+      *ngIf="!coreService.isValidUser"
       mat-button
       [routerLinkActive]="['link-active']"
       [routerLink]="['/login']"
@@ -27,7 +27,7 @@
       Login
     </button>
     <button
-      *ngIf="coreService.isShowSuccessMsg"
+      *ngIf="coreService.isValidUser"
       mat-icon-button
       [matMenuTriggerFor]="userMenu"
     >
