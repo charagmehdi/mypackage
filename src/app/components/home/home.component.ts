@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { CoreService } from 'src/app/services/core.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  items: string[] = ['tom', 'dick', 'mehdi', 'mohd'];
+  items: any = [];
   isShowColor = false;
   mentionConfig = {
     triggerChar: '@',
@@ -15,9 +17,13 @@ export class HomeComponent implements OnInit {
   };
   data = '';
 
-  constructor() {}
+  constructor(private coreService: CoreService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.items = this.coreService.loginJson.map((item) => {
+      return item.username;
+    });
+  }
   getItem(ev) {
     this.isShowColor = true;
     setTimeout(() => {

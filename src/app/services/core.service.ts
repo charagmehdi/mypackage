@@ -17,6 +17,16 @@ export class CoreService {
       password: 'def123',
       username: 'dick',
     },
+    {
+      userid: 'mehdi@media.com',
+      password: 'mehdi123',
+      username: 'mehdi',
+    },
+    {
+      userid: 'mohd@media.com',
+      password: 'mohd123',
+      username: 'mohd',
+    },
   ];
   constructor() {}
 }
